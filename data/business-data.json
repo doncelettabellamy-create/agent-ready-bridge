@@ -1,0 +1,12 @@
+{
+  "customers": [
+    { "id": 1, "name": "Maple Street Bakery", "city": "Austin", "status": "active" },
+    { "id": 2, "name": "Brightside Dental", "city": "Denver", "status": "active" },
+    { "id": 3, "name": "Harbor Auto Repair", "city": "Tampa", "status": "inactive" }
+  ],
+  "orders": [
+    { "id": 1001, "customer_id": 1, "total": 240.5, "status": "paid" },
+    { "id": 1002, "customer_id": 2, "total": 980.0, "status": "open" },
+    { "id": 1003, "customer_id": 1, "total": 75.25, "status": "open" }
+  ]
+}

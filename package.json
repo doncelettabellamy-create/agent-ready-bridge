@@ -1,0 +1,27 @@
+{
+  "name": "agent-ready-bridge",
+  "version": "1.0.0",
+  "description": "MCP server that makes local business data readable by AI agents such as Claude and ChatGPT.",
+  "main": "index.js",
+  "bin": {
+    "agent-ready-bridge": "index.js"
+  },
+  "type": "commonjs",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "ai-agents",
+    "small-business"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "zod": "^4.6.5"
+  }
+}

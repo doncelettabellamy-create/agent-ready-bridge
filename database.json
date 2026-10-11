@@ -1,0 +1,34 @@
+{
+  "appointments": [
+    {
+      "clientName": "Maria Gonzalez",
+      "appointmentTime": "2026-10-12T09:00:00-05:00",
+      "serviceType": "Initial Consultation",
+      "status": "confirmed"
+    },
+    {
+      "clientName": "James Whitaker",
+      "appointmentTime": "2026-10-12T11:30:00-05:00",
+      "serviceType": "Follow-Up Visit",
+      "status": "confirmed"
+    },
+    {
+      "clientName": "Priya Patel",
+      "appointmentTime": "2026-10-13T14:00:00-05:00",
+      "serviceType": "Annual Review",
+      "status": "pending"
+    },
+    {
+      "clientName": "Daniel Okafor",
+      "appointmentTime": "2026-10-14T10:15:00-05:00",
+      "serviceType": "Service Estimate",
+      "status": "cancelled"
+    },
+    {
+      "clientName": "Chen Li",
+      "appointmentTime": "2026-10-15T16:45:00-05:00",
+      "serviceType": "Initial Consultation",
+      "status": "completed"
+    }
+  ]
+}
