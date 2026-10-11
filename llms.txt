@@ -22,23 +22,23 @@ Agent-Ready Bridge runs locally over stdio. It makes no network calls and never 
 
 All services are custom and hand-delivered per contract. Rates are in USD.
 
-### Tier 1: $750 (one-time)
+### Tier 1: The Administrative Leak Audit, $199 (one-time)
 
-- Complete operational friction audit
-- Identification of data leaks
-- Custom JSON data model blueprint
+- Locate the wasted employee hours hiding in your admin routines
+- Pinpoint repeated lookups, re-entry and manual follow-ups that cost time every week
+- Clear list of where the hours go, so you know what to fix first
 
-### Tier 2: $3,500 (one-time)
+### Tier 2: The Core Office AI Integration, $950 (one-time)
 
-- End-to-end custom MCP server script build
-- Secure mapping of your local files
-- Deployment into your local Claude Desktop client
+- Local file query setup: ask questions about your own scheduling and records files
+- Plain-text answers in the assistant you already use
+- Local-first by design: the bridge runs on your machine, with no cloud server to host or pay for
 
-### Tier 3: $2,500/mo (monthly)
+### Tier 3: The AI Search Engine Optimization Engine, $99/mo (monthly utility)
 
-- Continuous AI agent fleet maintenance
-- Ongoing semantic website updates (llms.txt schema mapping) for AI search discovery
-- Dedicated infrastructure scaling
+- Ongoing low-friction script maintenance
+- Background semantic data updates (llms.txt schema mapping)
+- Keeps your site readable to AI search tools, such as ChatGPT Search, so they can find and recommend you
 
 ## Docs
 
