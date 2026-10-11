@@ -31,8 +31,9 @@ All services are custom and hand-delivered per contract. Rates are in USD.
 ### Tier 2: The Core Office AI Integration, $950 (one-time)
 
 - Local file query setup: ask questions about your own scheduling and records files
-- Plain-text answers in the assistant you already use
-- Local-first by design: the bridge runs on your machine, with no cloud server to host or pay for
+- Text-based data queries: ask in plain English, get plain-text answers
+- Zero cloud overhead: the bridge runs on your own computer, with no cloud server to host or pay for
+- Office privacy: your files stay on your own computer
 
 ### Tier 3: The AI Search Engine Optimization Engine, $99/mo (monthly utility)
 

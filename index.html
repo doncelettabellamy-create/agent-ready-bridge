@@ -77,7 +77,10 @@
     .pricing-lede, .pricing-note { color: #a0a7b4; margin: 0 0 20px; }
     .pricing-note { margin: 20px 0 0; font-size: 0.95rem; }
     .tiers { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
-    .tier { background: #181b20; border: 1px solid #2a2f37; border-radius: 12px; padding: 20px; }
+    .tier { background: #181b20; border: 0; border-radius: 12px; padding: 20px; }
+    .pivot { padding: 8px 0 32px; }
+    .pivot h2 { font-size: clamp(1.4rem, 4vw, 1.9rem); line-height: 1.25; }
+    .pivot p { max-width: 68ch; color: var(--muted); }
     .tier h3 { margin: 0 0 8px; font-size: 1rem; color: #a0a7b4; font-weight: 600; }
     .price { margin: 0; font-size: 2.2rem; font-weight: 700; letter-spacing: -0.02em; }
     .price span { font-size: 1rem; font-weight: 500; color: #a0a7b4; }
@@ -101,6 +104,14 @@
     </header>
 
     <main>
+      <section id="pivot" class="pivot">
+        <h2>To Every Small Business &amp; Non-Profit Facing the 2026 Shift: Don't Be Afraid to Pivot. We Are Here to Help.</h2>
+        <p>The economic landscape has shifted. High overhead, rising operating costs and fast tech updates are pushing small organizations to adapt quickly. You're being told to adopt AI, change your marketing and update your systems, and it can feel overwhelming.</p>
+        <p>You don't need to be a technology expert, and you don't need to throw away the systems you spent years building. We keep the transition simple, affordable and secure.</p>
+        <p><strong>The old way:</strong> SEO built on keywords, blogs and fighting to rank on Google. <strong>The new way:</strong> customers increasingly ask AI search tools like ChatGPT and Claude to choose businesses for them. If your website is only built for human eyes, those tools may struggle to read your services. We rebuild your web files so AI search tools can more easily find and recommend you, and we connect your daily spreadsheets to private office AI tools so your team gets instant answers without manual busywork.</p>
+        <p>We meet you where you are. You keep your current tools and your current data. We handle the technical shift while you focus on running your business.</p>
+      </section>
+
       <div class="hero">
         <h1>Less busywork.<br>More business.</h1>
         <p class="lede">Your schedule, customers and orders already hold the answers. Agent-Ready Bridge lets your AI assistant read them, so you stop hunting and start deciding.</p>
@@ -152,7 +163,7 @@ If your website is only built for human eyes, AI search crawling bots may strugg
       </section>
 
       <section id="pricing" class="pricing" aria-labelledby="pricing-title">
-        <h2 id="pricing-title">First-Principles B2B Pricing Matrix</h2>
+        <h2 id="pricing-title">First-Principles B2B Pricing</h2>
         <p class="pricing-lede">Transparent fees. No hidden line items.</p>
         <div class="tiers">
           <div class="tier">
@@ -174,8 +185,9 @@ If your website is only built for human eyes, AI search crawling bots may strugg
             <p class="cadence">One-time</p>
             <ul>
               <li>Local file query setup: ask questions about your own scheduling and records files</li>
-              <li>Plain-text answers in the assistant you already use</li>
-              <li>Local-first by design: the bridge runs on your machine, with no cloud server to host or pay for</li>
+              <li>Text-based data queries: ask in plain English, get plain-text answers</li>
+              <li>Zero cloud overhead: the bridge runs on your own computer, with no cloud server to host or pay for</li>
+              <li>Office privacy: your files stay on your own computer</li>
             </ul>
             <a class="btn tier-btn" href="#intake">Request Tier 2</a>
           </div>
@@ -192,7 +204,7 @@ If your website is only built for human eyes, AI search crawling bots may strugg
             <a class="btn tier-btn" href="#intake">Request Tier 3</a>
           </div>
         </div>
-        <p class="pricing-note">Send your setup through the form above and we'll confirm the tier that fits.</p>
+        <p class="pricing-note">Send your setup through the form above and we'll confirm the tier that fits. Plain-English service, zero cloud overhead, and your files stay on your own computer. The AI assistant you connect still processes the answers it reads, under that provider's privacy terms.</p>
       </section>
     </main>
 
