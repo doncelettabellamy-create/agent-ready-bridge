@@ -18,6 +18,28 @@ Agent-Ready Bridge runs locally over stdio. It makes no network calls and never 
 - Step 3: Deployment of read-only AI agent workflows, with secure deployment straight into the client's local Claude Desktop environment.
 - Implementation requests are submitted through the intake form on the [storefront](index.html#intake).
 
+## Commercial Pricing Matrix
+
+All services are custom and hand-delivered per contract. Rates are in USD.
+
+### Tier 1: $750 (one-time)
+
+- Complete operational friction audit
+- Identification of data leaks
+- Custom JSON data model blueprint
+
+### Tier 2: $3,500 (one-time)
+
+- End-to-end custom MCP server script build
+- Secure mapping of your local files
+- Deployment into your local Claude Desktop client
+
+### Tier 3: $2,500/mo (monthly)
+
+- Continuous AI agent fleet maintenance
+- Ongoing semantic website updates (llms.txt schema mapping) for AI search discovery
+- Dedicated infrastructure scaling
+
 ## Docs
 
 - [Repository and README](https://github.com/doncelettabellamy-create/agent-ready-bridge): setup, tool parameters, client configuration and security notes.
