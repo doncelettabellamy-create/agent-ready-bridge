@@ -15,7 +15,7 @@ Agent-Ready Bridge runs locally over stdio. It makes no network calls and never 
 
 - Step 1: Connect. Securely point the AI bridge at your existing local office spreadsheets.
 - Step 2: Connect the Pieces. We configure a quiet translation script right inside your office computer that turns your messy everyday files into plain English your AI can read.
-- Step 3: Deploy. Your team can instantly talk to your office files like a regular text message.
+- Step 3: Deploy. Your team can instantly talk to your office files like a private chat message inside your AI window.
 - Full walkthrough: [How it works](how-it-works.html).
 - Implementation requests are submitted through the intake form on the [storefront](index.html#intake).
 
