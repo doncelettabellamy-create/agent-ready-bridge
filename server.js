@@ -8,14 +8,15 @@
 //
 // Environment:
 //   API_KEY  required. Requests must send it in the X-API-Key header.
-//   PORT     optional, default 3000.
-//   HOST     optional, default 127.0.0.1 (local only).
+//   PORT     optional, default 3000. Cloud hosts set this automatically.
+//   HOST     optional. Defaults to 0.0.0.0 when PORT is provided by a host (so outside
+//            traffic can reach the server) and to 127.0.0.1 (local only) otherwise.
 
 const http = require("node:http");
 const crypto = require("node:crypto");
 
 const PORT = Number(process.env.PORT) || 3000;
-const HOST = process.env.HOST || "127.0.0.1";
+const HOST = process.env.HOST || (process.env.PORT ? "0.0.0.0" : "127.0.0.1");
 const API_KEY = process.env.API_KEY;
 
 if (!API_KEY) {
