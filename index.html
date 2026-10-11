@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent-Ready Bridge — Less busywork. More business.</title>
+  <meta name="description" content="Agent-Ready Bridge connects the data your business already has to AI assistants like Claude, so answers take seconds instead of searches.">
+  <style>
+    :root {
+      --bg: #fafaf7;
+      --fg: #16181d;
+      --muted: #5a606b;
+      --card: #ffffff;
+      --line: #e3e3dc;
+      --accent: #1f6feb;
+      --accent-fg: #ffffff;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #101215;
+        --fg: #eceef2;
+        --muted: #a0a7b4;
+        --card: #181b20;
+        --line: #2a2f37;
+        --accent: #5b9bff;
+        --accent-fg: #0b0d10;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+    header { padding: 20px 0; display: flex; justify-content: space-between; align-items: center; }
+    .brand { font-weight: 700; letter-spacing: -0.01em; }
+    nav a { color: var(--muted); text-decoration: none; margin-left: 20px; font-size: 15px; }
+    nav a:hover { color: var(--fg); }
+    .hero { padding: 72px 0 56px; }
+    h1 { font-size: clamp(2.4rem, 7vw, 4rem); line-height: 1.05; letter-spacing: -0.03em; margin: 0 0 20px; }
+    .lede { font-size: 1.2rem; color: var(--muted); max-width: 40ch; margin: 0 0 32px; }
+    .btn {
+      display: inline-block; padding: 12px 22px; border-radius: 8px; font-weight: 600;
+      background: var(--accent); color: var(--accent-fg); text-decoration: none;
+    }
+    .btn.secondary { background: transparent; color: var(--fg); border: 1px solid var(--line); margin-left: 8px; }
+    section { padding: 40px 0; border-top: 1px solid var(--line); }
+    h2 { font-size: 1.6rem; letter-spacing: -0.02em; margin: 0 0 16px; }
+    .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+    .card h3 { margin: 0 0 8px; font-size: 1.05rem; }
+    .card p { margin: 0; color: var(--muted); font-size: 0.98rem; }
+    ol { padding-left: 1.2em; }
+    li { margin-bottom: 8px; }
+    code { font: 0.9em ui-monospace, Consolas, monospace; background: var(--card); border: 1px solid var(--line); padding: 1px 6px; border-radius: 4px; }
+    footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <span class="brand">Agent-Ready Bridge</span>
+      <nav>
+        <a href="#how">How it works</a>
+        <a href="#why">Why it matters</a>
+        <a href="https://github.com/doncelettabellamy-create/agent-ready-bridge">GitHub</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="hero">
+        <h1>Less busywork.<br>More business.</h1>
+        <p class="lede">Your schedule, customers and orders already hold the answers. Agent-Ready Bridge lets your AI assistant read them, so you stop hunting and start deciding.</p>
+        <a class="btn" href="https://github.com/doncelettabellamy-create/agent-ready-bridge">Get the bridge</a>
+        <a class="btn secondary" href="#how">See how it works</a>
+      </div>
+
+      <section id="why">
+        <h2>Start with the customer. Remove everything in the way.</h2>
+        <p>Every minute spent exporting a spreadsheet, searching an old system, or asking a colleague "what's on Thursday?" is a minute not spent on the person in front of you. We work backwards from that: what would you do if the answer were already there?</p>
+        <div class="grid">
+          <div class="card"><h3>No migration</h3><p>Keep the tools you have. Export to JSON and point the bridge at the file.</p></div>
+          <div class="card"><h3>No new dashboard</h3><p>Ask in plain language, inside the assistant you already use.</p></div>
+          <div class="card"><h3>No risk to your data</h3><p>Read-only and local. The bridge never writes to your records and makes no network calls.</p></div>
+        </div>
+      </section>
+
+      <section id="how">
+        <h2>Three steps. No project plan.</h2>
+        <ol>
+          <li>Export your appointments, customers or orders to a JSON file.</li>
+          <li>Point the bridge at it with <code>BUSINESS_DATA_PATH</code>, or use the included <code>database.json</code>.</li>
+          <li>Ask your assistant: "Which appointments are still pending?"</li>
+        </ol>
+        <p>Built on the open Model Context Protocol (MCP), so it works with Claude and with other MCP-capable clients.</p>
+      </section>
+    </main>
+
+    <footer>
+      Agent-Ready Bridge is open source (MIT). Machine-readable summary for AI crawlers: <a href="llms.txt">llms.txt</a>.
+    </footer>
+  </div>
+</body>
+</html>

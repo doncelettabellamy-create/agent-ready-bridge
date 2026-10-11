@@ -1,0 +1,28 @@
+# Agent-Ready Bridge
+
+> Agent-Ready Bridge is an open-source Model Context Protocol (MCP) server that gives AI assistants read-only access to a small business's existing data (appointments, customers, orders) stored as local JSON. Tagline: "Less busywork. More business."
+
+Agent-Ready Bridge runs locally over stdio. It makes no network calls and never writes to the data file. The operator chooses the data file through the BUSINESS_DATA_PATH environment variable; the assistant cannot choose which file is read.
+
+## Capabilities
+
+- Tool `fetch_business_data`: read-only. With no arguments it lists collections and record counts. With `collection` it returns records, optionally narrowed by exact-match, case-insensitive `filters`, and capped by `limit` (default 50, maximum 200).
+- Transport: stdio. Runtime: Node.js 18 or newer.
+- Data format: a JSON object whose keys are collections, each an array of records. The bundled sample, `database.json`, holds `appointments` with `clientName`, `appointmentTime`, `serviceType` and `status`.
+- Compatible with MCP-capable clients such as Claude Desktop and Claude Code. Other MCP clients can use the same command and arguments.
+
+## Docs
+
+- [Repository and README](https://github.com/doncelettabellamy-create/agent-ready-bridge): setup, tool parameters, client configuration and security notes.
+- [Server source](https://github.com/doncelettabellamy-create/agent-ready-bridge/blob/main/index.js): the full implementation in a single file.
+- [Sample data](https://github.com/doncelettabellamy-create/agent-ready-bridge/blob/main/database.json): example appointments dataset.
+
+## Integration
+
+- Install: `npm install`, then `npm start` from the repository folder.
+- Claude Code: `claude mcp add agent-ready-bridge -e BUSINESS_DATA_PATH=/path/to/data.json -- node /path/to/agent-ready-bridge/index.js`
+- Claude Desktop: add an `mcpServers` entry with `command: "node"` and the path to `index.js`.
+
+## Optional
+
+- [Storefront](index.html): human-readable overview of the product.
