@@ -47,6 +47,7 @@ All services are custom and hand-delivered per contract. Rates are in USD.
 - [Repository and README](https://github.com/doncelettabellamy-create/agent-ready-bridge): setup, tool parameters, client configuration and security notes.
 - [Server source](https://github.com/doncelettabellamy-create/agent-ready-bridge/blob/main/index.js): the full implementation in a single file.
 - [Sample data](https://github.com/doncelettabellamy-create/agent-ready-bridge/blob/main/database.json): example appointments dataset.
+- [OpenAPI specification](openapi.yaml): route definition for the read-only `GET /api/fetch-records` gateway, with `clientName`, `totalStaffHoursLost` and `dataType` query parameters. Preview only: the hosted gateway is simulated and not live yet.
 
 ## Integration
 

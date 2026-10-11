@@ -1,0 +1,117 @@
+openapi: 3.0.3
+info:
+  title: Agent-Ready Bridge Records Gateway
+  version: 1.0.0
+  description: >
+    Read-only route definition for the Agent-Ready Bridge hosted gateway, written for
+    Custom GPT Actions and other OpenAPI-capable agents.
+    PREVIEW: the gateway server below is simulated and is not live yet. The route,
+    parameters and response shape are the planned contract.
+servers:
+  - url: https://gateway.example.com
+    description: Simulated hosted gateway (placeholder, not a live endpoint)
+security:
+  - ApiKeyAuth: []
+paths:
+  /api/fetch-records:
+    get:
+      operationId: fetchRecords
+      summary: Fetch business records for a client
+      description: >
+        Returns a confirmation block for a read-only records query. This route never
+        creates, changes or deletes data.
+      parameters:
+        - name: clientName
+          in: query
+          required: true
+          description: Name of the client whose records are requested.
+          schema:
+            type: string
+            minLength: 1
+            maxLength: 200
+            example: Maple Street Bakery
+        - name: totalStaffHoursLost
+          in: query
+          required: false
+          description: Only return records where the client's logged total staff hours lost is at least this value.
+          schema:
+            type: number
+            minimum: 0
+            example: 10
+        - name: dataType
+          in: query
+          required: false
+          description: How the returned records are formatted.
+          schema:
+            type: string
+            enum: [json, csv, text]
+            default: json
+      responses:
+        '200':
+          description: Confirmation of the read-only query and its results.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FetchRecordsConfirmation'
+              example:
+                status: ok
+                readOnly: true
+                clientName: Maple Street Bakery
+                totalStaffHoursLost: 10
+                dataType: json
+                recordCount: 0
+                records: []
+        '400':
+          description: A parameter is missing or invalid.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Missing or invalid API key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+  schemas:
+    FetchRecordsConfirmation:
+      type: object
+      required: [status, readOnly, clientName, dataType, recordCount, records]
+      properties:
+        status:
+          type: string
+          enum: [ok]
+        readOnly:
+          type: boolean
+          enum: [true]
+          description: Always true. This route does not write data.
+        clientName:
+          type: string
+        totalStaffHoursLost:
+          type: number
+          description: Echo of the filter value, present only when it was supplied.
+        dataType:
+          type: string
+          enum: [json, csv, text]
+        recordCount:
+          type: integer
+          minimum: 0
+        records:
+          type: array
+          description: Matching records, formatted according to dataType.
+          items: {}
+    Error:
+      type: object
+      required: [status, message]
+      properties:
+        status:
+          type: string
+          enum: [error]
+        message:
+          type: string
