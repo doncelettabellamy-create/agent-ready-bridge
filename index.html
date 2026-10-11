@@ -67,8 +67,15 @@
     .card { background: var(--surface); border-radius: 14px; padding: 22px; }
     .card h3 { margin: 0 0 8px; font-size: 1.05rem; }
     .card p { margin: 0; color: var(--muted); font-size: 0.97rem; }
-    ol { padding-left: 1.2em; max-width: 68ch; }
     li { margin-bottom: 8px; }
+    .steps { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin: 24px 0; }
+    .step { background: var(--card); border: 2px solid var(--line); border-radius: 16px; padding: 24px; }
+    .step h3 { margin: 12px 0 8px; font-size: 1.1rem; }
+    .step p { margin: 0; color: var(--muted); font-size: .97rem; }
+    .num {
+      display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px;
+      border-radius: 50%; background: var(--ink); color: #fff; font-weight: 700;
+    }
 
     .semantic { background: var(--surface); border-radius: 20px; padding: 40px 28px; border-top: 0; margin: 24px 0; }
     .semantic p:last-child { margin-bottom: 0; }
@@ -136,9 +143,9 @@
     <div class="wrap bar">
       <span class="brand">Agent-Ready Bridge</span>
       <nav>
-        <a href="#how">How it works</a>
+        <a href="#how-it-works">How it works</a>
         <a href="#pricing">Pricing</a>
-        <a href="#intake">Request</a>
+        <a href="#request-form">Request</a>
         <a href="https://github.com/doncelettabellamy-create/agent-ready-bridge">GitHub</a>
       </nav>
     </div>
@@ -156,17 +163,17 @@
       <div class="hero">
         <h1>Less busywork.<br>More business.</h1>
         <p class="lede">Your schedule, customers and orders already hold the answers. Agent-Ready Bridge lets your AI assistant read them, so you stop hunting and start deciding.</p>
-        <a class="btn" href="#intake">Request implementation</a>
-        <a class="btn secondary" href="#how">See how it works</a>
+        <a class="btn" href="#request-form">Request implementation</a>
+        <a class="btn secondary" href="#how-it-works">See how it works</a>
       </div>
 
-      <section id="how">
+      <section id="how-it-works">
         <h2>Three steps. No project plan.</h2>
-        <ol>
-          <li><strong>Step 1:</strong> Securely connect your local scheduling data using standard JSON data models.</li>
-          <li><strong>Step 2:</strong> Custom local MCP translation script optimization.</li>
-          <li><strong>Step 3:</strong> Deployment of read-only AI agent workflows, with secure deployment straight into your local Claude Desktop environment.</li>
-        </ol>
+        <div class="steps">
+          <div class="step"><span class="num">1</span><h3>Connect</h3><p>Securely connect your local scheduling data using standard JSON data models.</p></div>
+          <div class="step"><span class="num">2</span><h3>Translate</h3><p>Custom local MCP translation script optimization.</p></div>
+          <div class="step"><span class="num">3</span><h3>Deploy</h3><p>Deployment of read-only AI agent workflows, with secure deployment straight into your local Claude Desktop environment.</p></div>
+        </div>
         <p class="text">Built on the open Model Context Protocol (MCP), so it works with Claude and with other MCP-capable clients.</p>
         <div class="grid">
           <div class="card"><h3>No migration</h3><p>Keep the tools you have. Export to JSON and point the bridge at the file.</p></div>
@@ -199,7 +206,7 @@ If your website is only built for human eyes, AI search crawling bots may strugg
               <li>Pinpoint repeated lookups, re-entry and manual follow-ups that cost time every week</li>
               <li>Clear list of where the hours go, so you know what to fix first</li>
             </ul>
-            <a class="btn" href="#intake" data-option="audit">Request Tier 1</a>
+            <a class="btn" href="#request-form" data-option="audit">Request Tier 1</a>
           </div>
           <div class="tier">
             <h3>Tier 2</h3>
@@ -212,7 +219,7 @@ If your website is only built for human eyes, AI search crawling bots may strugg
               <li>Zero cloud overhead: the bridge runs on your own computer, with no cloud server to host or pay for</li>
               <li>Office privacy: your files stay on your own computer</li>
             </ul>
-            <a class="btn" href="#intake" data-option="integration">Request Tier 2</a>
+            <a class="btn" href="#request-form" data-option="integration">Request Tier 2</a>
           </div>
           <div class="tier">
             <h3>Tier 3</h3>
@@ -224,13 +231,13 @@ If your website is only built for human eyes, AI search crawling bots may strugg
               <li>Background semantic data updates (llms.txt schema mapping)</li>
               <li>Keeps your site readable to AI search tools, such as ChatGPT Search, so they can find and recommend you</li>
             </ul>
-            <a class="btn" href="#intake" data-option="seo">Request Tier 3</a>
+            <a class="btn" href="#request-form" data-option="seo">Request Tier 3</a>
           </div>
         </div>
         <p class="pricing-note">The AI assistant you connect still processes the answers it reads, under that provider's privacy terms.</p>
       </section>
 
-      <section id="intake">
+      <section id="request-form">
         <h2>Request your starting point.</h2>
         <p class="text">Choose what you need and tell us the one thing slowing your office down. We reply with a concrete plan.</p>
         <form id="intake-form" class="intake" novalidate>
