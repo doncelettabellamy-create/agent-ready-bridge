@@ -55,6 +55,15 @@
     ol { padding-left: 1.2em; }
     li { margin-bottom: 8px; }
     code { font: 0.9em ui-monospace, Consolas, monospace; background: var(--card); border: 1px solid var(--line); padding: 1px 6px; border-radius: 4px; }
+    .intake { display: grid; gap: 8px; max-width: 560px; }
+    .intake label { font-weight: 600; font-size: 0.95rem; margin-top: 8px; }
+    .intake input, .intake textarea {
+      width: 100%; padding: 12px; font: inherit; color: var(--fg);
+      background: var(--card); border: 1px solid var(--line); border-radius: 8px;
+    }
+    .intake input:focus, .intake textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .intake button { border: 0; cursor: pointer; font: inherit; font-weight: 600; justify-self: start; margin-top: 8px; }
+    .note { margin: 4px 0 0; color: var(--muted); font-size: 0.9rem; min-height: 1.4em; }
     footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); }
   </style>
 </head>
@@ -73,7 +82,7 @@
       <div class="hero">
         <h1>Less busywork.<br>More business.</h1>
         <p class="lede">Your schedule, customers and orders already hold the answers. Agent-Ready Bridge lets your AI assistant read them, so you stop hunting and start deciding.</p>
-        <a class="btn" href="https://github.com/doncelettabellamy-create/agent-ready-bridge">Get the bridge</a>
+        <a class="btn" href="#intake">Request implementation</a>
         <a class="btn secondary" href="#how">See how it works</a>
       </div>
 
@@ -90,11 +99,24 @@
       <section id="how">
         <h2>Three steps. No project plan.</h2>
         <ol>
-          <li>Export your appointments, customers or orders to a JSON file.</li>
-          <li>Point the bridge at it with <code>BUSINESS_DATA_PATH</code>, or use the included <code>database.json</code>.</li>
-          <li>Ask your assistant: "Which appointments are still pending?"</li>
+          <li><strong>Step 1:</strong> Securely connect your local scheduling data using standard JSON data models.</li>
+          <li><strong>Step 2:</strong> Custom local MCP translation script optimization.</li>
+          <li><strong>Step 3:</strong> Deployment of read-only AI agent workflows, with secure deployment straight into your local Claude Desktop environment.</li>
         </ol>
         <p>Built on the open Model Context Protocol (MCP), so it works with Claude and with other MCP-capable clients.</p>
+      </section>
+
+      <section id="intake">
+        <h2>Tell us what you're scheduling.</h2>
+        <p>Describe your current setup in a few lines: the tool or sheet you use, roughly how many records, and the question you wish you could just ask. We reply with a concrete plan.</p>
+        <form id="intake-form" class="intake">
+          <label for="intake-name">Your name and business</label>
+          <input id="intake-name" name="name" type="text" autocomplete="organization" required>
+          <label for="intake-message">Your scheduling setup</label>
+          <textarea id="intake-message" name="message" rows="6" required placeholder="e.g. We track appointments in a booking tool that exports JSON, about 300 records a month. We'd like to ask, &quot;Which clients haven't confirmed for next week?&quot;"></textarea>
+          <button class="btn" type="submit">Send request</button>
+          <p id="intake-note" class="note" role="status"></p>
+        </form>
       </section>
     </main>
 
@@ -102,5 +124,36 @@
       Agent-Ready Bridge is open source (MIT). Machine-readable summary for AI crawlers: <a href="llms.txt">llms.txt</a>.
     </footer>
   </div>
+
+  <script>
+    // Intake requests are posted to Formspree, which forwards them to the owner's inbox.
+    var INTAKE_ENDPOINT = "https://formspree.io/doncelettabellamy@gmail.com";
+
+    document.getElementById("intake-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var form = e.target;
+      var note = document.getElementById("intake-note");
+      var button = form.querySelector("button");
+      button.disabled = true;
+      note.textContent = "Sending...";
+      fetch(INTAKE_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+          name: form.elements.name.value.trim(),
+          message: form.elements.message.value.trim(),
+          _subject: "Implementation request"
+        })
+      }).then(function (res) {
+        if (!res.ok) throw new Error("status " + res.status);
+        form.reset();
+        note.textContent = "Thanks. Your request was sent.";
+      }).catch(function () {
+        note.textContent = "Sorry, that didn't send. Please try again in a moment.";
+      }).then(function () {
+        button.disabled = false;
+      });
+    });
+  </script>
 </body>
 </html>

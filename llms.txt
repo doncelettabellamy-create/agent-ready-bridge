@@ -11,6 +11,13 @@ Agent-Ready Bridge runs locally over stdio. It makes no network calls and never 
 - Data format: a JSON object whose keys are collections, each an array of records. The bundled sample, `database.json`, holds `appointments` with `clientName`, `appointmentTime`, `serviceType` and `status`.
 - Compatible with MCP-capable clients such as Claude Desktop and Claude Code. Other MCP clients can use the same command and arguments.
 
+## Implementation
+
+- Step 1: Securely connect the client's local scheduling data using standard JSON data models.
+- Step 2: Custom local MCP translation script optimization.
+- Step 3: Deployment of read-only AI agent workflows, with secure deployment straight into the client's local Claude Desktop environment.
+- Implementation requests are submitted through the intake form on the [storefront](index.html#intake).
+
 ## Docs
 
 - [Repository and README](https://github.com/doncelettabellamy-create/agent-ready-bridge): setup, tool parameters, client configuration and security notes.
