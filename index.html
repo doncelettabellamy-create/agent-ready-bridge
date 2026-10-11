@@ -64,6 +64,18 @@
     .intake input:focus, .intake textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
     .intake button { border: 0; cursor: pointer; font: inherit; font-weight: 600; justify-self: start; margin-top: 8px; }
     .note { margin: 4px 0 0; color: var(--muted); font-size: 0.9rem; min-height: 1.4em; }
+    .pricing {
+      background: #0e1116; color: #eceef2; border: 1px solid #2a2f37; border-radius: 16px;
+      padding: 32px 24px; margin: 40px 0;
+    }
+    .pricing-lede, .pricing-note { color: #a0a7b4; margin: 0 0 20px; }
+    .pricing-note { margin: 20px 0 0; font-size: 0.95rem; }
+    .tiers { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    .tier { background: #181b20; border: 1px solid #2a2f37; border-radius: 12px; padding: 20px; }
+    .tier h3 { margin: 0 0 8px; font-size: 1rem; color: #a0a7b4; font-weight: 600; }
+    .price { margin: 0; font-size: 2.2rem; font-weight: 700; letter-spacing: -0.02em; }
+    .price span { font-size: 1rem; font-weight: 500; color: #a0a7b4; }
+    .cadence { margin: 4px 0 0; color: #a0a7b4; font-size: 0.9rem; }
     footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); }
   </style>
 </head>
@@ -118,6 +130,29 @@
           <p id="intake-note" class="note" role="status"></p>
         </form>
       </section>
+
+      <section id="pricing" class="pricing" aria-labelledby="pricing-title">
+        <h2 id="pricing-title">First-Principles B2B Pricing Matrix</h2>
+        <p class="pricing-lede">Transparent fees. No hidden line items.</p>
+        <div class="tiers">
+          <div class="tier">
+            <h3>Tier 1</h3>
+            <p class="price">$750</p>
+            <p class="cadence">One-time</p>
+          </div>
+          <div class="tier">
+            <h3>Tier 2</h3>
+            <p class="price">$3,500</p>
+            <p class="cadence">One-time</p>
+          </div>
+          <div class="tier">
+            <h3>Tier 3</h3>
+            <p class="price">$2,500<span>/mo</span></p>
+            <p class="cadence">Monthly</p>
+          </div>
+        </div>
+        <p class="pricing-note">Send your setup through the form above and we'll confirm the tier that fits.</p>
+      </section>
     </main>
 
     <footer>
@@ -127,7 +162,7 @@
 
   <script>
     // Intake requests are posted to Formspree, which forwards them to the owner's inbox.
-    var INTAKE_ENDPOINT = "https://formspree.io/doncelettabellamy@gmail.com";
+    var INTAKE_ENDPOINT = "https://formspree.io/f/mvkzrden";
 
     document.getElementById("intake-form").addEventListener("submit", function (e) {
       e.preventDefault();
