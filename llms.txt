@@ -14,7 +14,7 @@ Agent-Ready Bridge runs locally over stdio. It makes no network calls and never 
 ## Implementation
 
 - Step 1: Securely connect the client's local scheduling data using standard JSON data models.
-- Step 2: Custom local MCP translation script optimization.
+- Step 2: Connect the Pieces. We build a quiet, custom translation script that sits inside your office computer. It instantly turns your messy everyday files into plain English that an AI can safely read and understand.
 - Step 3: Deployment of read-only AI agent workflows, with secure deployment straight into the client's local Claude Desktop environment.
 - Implementation requests are submitted through the intake form on the [storefront](index.html#intake).
 
